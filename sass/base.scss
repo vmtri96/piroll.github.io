@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include responsive(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include responsive(tab-port) {
+        font-size: 50%;
+    }
+
+    @include responsive(big-desktop) {
+        font-size: 75%;
+    }
+}
+
+body {
+    font-family: $font-primary;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: $color-grey-dark;
+}
+
+.container {
+    width: 117rem;
+    margin: 0 auto;
+
+    @include responsive(desktop) {
+        width: 100rem;
+    }
+
+    @include responsive(tab) {
+        width: 90rem;
+    }
+
+    @include responsive(phone-land) {
+        width: 70rem;
+    }
+
+    @include responsive(phone) {
+        width: 35rem;
+    }
+}
+

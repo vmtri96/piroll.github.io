@@ -1,0 +1,77 @@
+.footer {
+    background-color: $color-black-1;
+    padding: 10rem 0;
+
+    .container {
+        display: grid;
+        grid-template-columns: 4.7fr 3fr 1.12fr 1.88fr 1fr;
+        grid-template-areas: auto auto auto;
+        grid-template-areas: "intro contact link1 link2 social"
+                            "intro contact link1 link2 social"
+                            "intro contact link1 link2 social";
+
+        @include responsive(phone) {
+            grid-template-areas: "intro intro intro intro intro"
+                                "contact contact contact contact contact"
+                                "link1 link2 . social .";
+        }
+
+        .company-intro {
+            grid-area: intro;
+
+            @include responsive(phone) {
+                margin-bottom: 2rem;
+            }
+
+            .company-name {
+                @include font($font-heading, 1.8rem, 700);
+                color: white;
+                margin-bottom: 2.7rem;
+            }
+        }
+
+        .company-contact {
+            grid-area: contact;
+
+            @include responsive(phone) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .company-link-1 {
+            grid-area: link1;
+        }
+        
+        .company-link-2 {
+            grid-area: link2;
+        }
+        
+        .company-social {
+            grid-area: social;
+        }
+
+        
+
+        p {
+            color: $color-grey-light-1;
+
+            &:not(:last-child) {
+                margin-bottom: .5rem;
+            }
+        }
+
+        a {
+            color: $color-grey-light-1;
+            text-decoration: none;
+            display: block;
+
+            &:not(:last-child) {
+                margin-bottom: .5rem;
+            }
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+}

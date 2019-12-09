@@ -1,0 +1,126 @@
+.contact {
+    background-color: $color-grey-light-3;
+    padding: 10rem 0;
+
+    .container {
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 67rem;
+            column-gap: 13rem;
+
+            @include responsive(tab) {
+                grid-template-columns: 1fr 50rem;
+            }
+
+            @include responsive(phone-land) {
+                grid-template-columns: 1fr 35rem;
+            }
+
+            @include responsive(phone-land) {
+                grid-template-columns: 1fr;
+                row-gap: 3rem;
+            }
+
+
+            .info {
+                h3 {
+                    @include font($font-heading, 3rem, 700);
+                    color: $color-black-2;
+                    margin-bottom: 3.3rem;
+                }
+
+                p {
+                    &:not(:last-child) {
+                        margin-bottom: 2rem;
+                    }
+
+                    &:first-of-type {
+                        margin-bottom: 3rem;
+                    }
+
+                    span {
+                        font-weight: 700;
+                        color: $color-black-2;
+                    }
+                }
+            }
+
+            .contact-form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 4.8rem 4.8rem 17rem;
+                grid-template-areas: "name email"
+                                    "title title"
+                                    "comment comment";
+                column-gap: 3rem;
+                row-gap: 3rem;
+                margin-bottom: 3rem;
+
+                @include responsive(phone) {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 4.8rem 4.8rem 4.8rem 17rem;
+                    grid-template-areas: "name"
+                                        "email"
+                                        "title"
+                                        "comment";
+                }
+
+                .form-group {
+                    height: 4.8rem;
+                    width: 100%;
+                    position: relative;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                    }
+
+                    label {
+                        position: absolute;
+                        top: 50%;
+                        left: 2rem;
+                        transform: translate(0, -50%);
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .form-name {
+                    grid-area: name;
+                }
+
+                .form-email {
+                    grid-area: email;
+                }
+
+                .form-title {
+                    grid-area: title;
+                }
+
+                .form-comment {
+                    grid-area: comment;
+                }
+
+                textarea {
+                    border: none;
+                    padding: 2rem;
+                    @include font($font-primary, 1.5rem, 400);
+                    color: $color-grey-dark;
+                    resize: none;
+                }
+            }
+        }
+
+        .map {
+            width: 100%;
+            height: 47rem;
+            margin-top: 10rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

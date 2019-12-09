@@ -1,0 +1,163 @@
+.about-intro {
+    background-image: url("../images/about-bg.png");
+    height: 35rem;
+    background-position: center;
+    background-size: cover;
+    
+    .container {
+        .main-title {
+            @include font($font-heading, 3.8rem, 700);
+            color: $color-black-2;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .sub-title {
+            @include font($font-primary, 1.8rem, 400);
+            color: $color-grey-dark;
+            text-align: center;
+            margin: 0 33rem;
+        }
+    }
+}
+
+.about-achievements {
+    background-color: $color-primary;
+    padding: 10rem 0;
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 3rem;
+
+        @include responsive(phone-land) {
+            grid-template-columns: 1fr 1fr;
+            row-gap: 3rem;
+        }
+
+        .achievement {
+            padding-left: .4rem;
+            display: flex;
+            align-items: center;
+
+            .photo-wrapper {
+                width: 4rem;
+                height: 4rem;
+                margin-right: 2.7rem;
+            }
+
+            .achievement-number {
+                margin-bottom: 1rem;
+                color: white;
+                @include font($font-heading, 1.8rem, 600);
+            }
+
+            .achievement-text {
+                text-transform: uppercase;
+                color: white;
+                text-emphasis: none;
+                @include font($font-heading, 1.2rem, 600);
+            }
+        }
+    }
+}
+
+.about-me {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "photo text"
+                        "photo text";
+    align-items: center;
+    background-color: $color-grey-light-3;
+
+    @include responsive(phone-land) {
+        grid-template-areas: "photo photo"
+                            "text text";
+    }
+
+    .photo-wrapper {
+        height: 57rem;
+        grid-area: photo;
+        
+
+        @include responsive(phone) {
+            height: 40rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .right-side {
+        padding-left: 8.5rem;
+        padding-right: 8.5rem;
+        grid-area: text;
+        
+
+        @include responsive(phone-land) {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            
+        }
+
+        @include responsive(phone) {
+            padding-left: 5rem;
+            padding-right: 5rem;
+            
+        }
+
+        .about-me-heading {
+            @include font($font-heading, 3rem, 700);
+            color: $color-black-2;
+            margin-bottom: 4rem;
+        }
+
+        .about-me-intro {
+            @include font($font-primary, 1.6rem, 400);
+
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+            
+        }
+
+        img {
+            margin-top: 3.7rem;
+        }
+    }
+}
+
+.need-project {
+    padding: 10rem 0;
+
+    .container {
+        text-align: center;
+
+        h2 {
+            @include font($font-heading, 3rem, 700);
+            color: $color-black-2;
+            margin-bottom: 3.5rem;
+        }
+
+        p {
+            text-align: center;
+            margin: 0 31.5rem 6rem 31.5rem;
+
+            @include responsive(tab) {
+                margin: 0 20rem 6rem 20rem;
+            }
+
+            @include responsive(phone-land) {
+                margin: 0 15rem 6rem 15rem;
+            }
+
+            @include responsive(phone) {
+                margin: 0 5rem 6rem 5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,539 @@
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes moveToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #787878; }
+
+.container {
+  width: 117rem;
+  margin: 0 auto; }
+  @media (max-width: 1280px) {
+    .container {
+      width: 100rem; } }
+  @media (max-width: 1024px) {
+    .container {
+      width: 90rem; } }
+  @media (max-width: 768px) {
+    .container {
+      width: 70rem; } }
+  @media (max-width: 480px) {
+    .container {
+      width: 35rem; } }
+
+.btn {
+  padding: 2.3rem 5.3rem;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none; }
+
+.btn-primary {
+  background-color: #10c9c3;
+  color: white; }
+
+.header .container {
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .header .container .menu {
+    list-style: none;
+    display: flex; }
+    @media (max-width: 480px) {
+      .header .container .menu {
+        display: none; } }
+    .header .container .menu li a {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #141414; }
+      .header .container .menu li a:hover, .header .container .menu li a.active {
+        color: #10c9c3; }
+    .header .container .menu li:not(:last-child) {
+      margin-right: 3.2rem; }
+  .header .container .menu-phone {
+    display: none; }
+    @media (max-width: 480px) {
+      .header .container .menu-phone {
+        display: block; } }
+    .header .container .menu-phone .checkbox {
+      display: none; }
+      .header .container .menu-phone .checkbox:checked ~ .menu-expand {
+        display: block; }
+    .header .container .menu-phone .menu-icon hr {
+      width: 3rem;
+      height: 2px;
+      padding: 1px 0;
+      margin: 6px 0;
+      color: #171717;
+      border: none;
+      background-color: #171717; }
+    .header .container .menu-phone .menu-expand {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #10c9c3;
+      z-index: 999;
+      display: none;
+      animation-name: moveToLeft;
+      animation-duration: .5s; }
+      .header .container .menu-phone .menu-expand ul {
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center; }
+        .header .container .menu-phone .menu-expand ul li {
+          margin: 1rem 0; }
+          .header .container .menu-phone .menu-expand ul li a {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #141414; }
+            .header .container .menu-phone .menu-expand ul li a:hover, .header .container .menu-phone .menu-expand ul li a.active {
+              color: white; }
+      .header .container .menu-phone .menu-expand .menu-close {
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 2rem;
+        right: 3rem; }
+
+.introduction {
+  background-color: #f6f6f6;
+  padding: 10rem 0; }
+  .introduction .container .main-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: #171717;
+    margin-bottom: 3rem;
+    text-align: center;
+    animation-name: moveUp;
+    animation-duration: 1.5s; }
+  .introduction .container .sub-title {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #787878;
+    text-align: center;
+    margin: 0 33rem;
+    animation-name: moveUp;
+    animation-duration: 1.5s; }
+    @media (max-width: 1024px) {
+      .introduction .container .sub-title {
+        margin: 0 17rem; } }
+    @media (max-width: 768px) {
+      .introduction .container .sub-title {
+        margin: 0 8rem; } }
+    @media (max-width: 480px) {
+      .introduction .container .sub-title {
+        margin: 0; } }
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 480px) {
+    .projects {
+      grid-template-columns: repeat(3, 1fr); } }
+  .projects .project {
+    position: relative;
+    height: 100%; }
+    .projects .project > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .projects .project .project-hover {
+      background-color: rgba(16, 201, 195, 0.85);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all .5s; }
+    .projects .project:hover .project-hover {
+      opacity: 1; }
+
+.about-intro {
+  background-image: url("../images/about-bg.png");
+  height: 35rem;
+  background-position: center;
+  background-size: cover; }
+  .about-intro .container .main-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: #171717;
+    margin-bottom: 3rem;
+    text-align: center; }
+  .about-intro .container .sub-title {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #787878;
+    text-align: center;
+    margin: 0 33rem; }
+
+.about-achievements {
+  background-color: #10c9c3;
+  padding: 10rem 0; }
+  .about-achievements .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3rem; }
+    @media (max-width: 768px) {
+      .about-achievements .container {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 3rem; } }
+    .about-achievements .container .achievement {
+      padding-left: .4rem;
+      display: flex;
+      align-items: center; }
+      .about-achievements .container .achievement .photo-wrapper {
+        width: 4rem;
+        height: 4rem;
+        margin-right: 2.7rem; }
+      .about-achievements .container .achievement .achievement-number {
+        margin-bottom: 1rem;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 600; }
+      .about-achievements .container .achievement .achievement-text {
+        text-transform: uppercase;
+        color: white;
+        text-emphasis: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600; }
+
+.about-me {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "photo text" "photo text";
+  align-items: center;
+  background-color: #f5f5f5; }
+  @media (max-width: 768px) {
+    .about-me {
+      grid-template-areas: "photo photo" "text text"; } }
+  .about-me .photo-wrapper {
+    height: 57rem;
+    grid-area: photo; }
+    @media (max-width: 480px) {
+      .about-me .photo-wrapper {
+        height: 40rem; } }
+    .about-me .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  .about-me .right-side {
+    padding-left: 8.5rem;
+    padding-right: 8.5rem;
+    grid-area: text; }
+    @media (max-width: 768px) {
+      .about-me .right-side {
+        padding-top: 4rem;
+        padding-bottom: 4rem; } }
+    @media (max-width: 480px) {
+      .about-me .right-side {
+        padding-left: 5rem;
+        padding-right: 5rem; } }
+    .about-me .right-side .about-me-heading {
+      font-family: "Montserrat", sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #171717;
+      margin-bottom: 4rem; }
+    .about-me .right-side .about-me-intro {
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 1.6rem;
+      font-weight: 400; }
+      .about-me .right-side .about-me-intro:not(:last-child) {
+        margin-bottom: 3rem; }
+    .about-me .right-side img {
+      margin-top: 3.7rem; }
+
+.need-project {
+  padding: 10rem 0; }
+  .need-project .container {
+    text-align: center; }
+    .need-project .container h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #171717;
+      margin-bottom: 3.5rem; }
+    .need-project .container p {
+      text-align: center;
+      margin: 0 31.5rem 6rem 31.5rem; }
+      @media (max-width: 1024px) {
+        .need-project .container p {
+          margin: 0 20rem 6rem 20rem; } }
+      @media (max-width: 768px) {
+        .need-project .container p {
+          margin: 0 15rem 6rem 15rem; } }
+      @media (max-width: 480px) {
+        .need-project .container p {
+          margin: 0 5rem 6rem 5rem; } }
+
+.contact {
+  background-color: #f5f5f5;
+  padding: 10rem 0; }
+  .contact .container .contact-info {
+    display: grid;
+    grid-template-columns: 1fr 67rem;
+    column-gap: 13rem; }
+    @media (max-width: 1024px) {
+      .contact .container .contact-info {
+        grid-template-columns: 1fr 50rem; } }
+    @media (max-width: 768px) {
+      .contact .container .contact-info {
+        grid-template-columns: 1fr 35rem; } }
+    @media (max-width: 768px) {
+      .contact .container .contact-info {
+        grid-template-columns: 1fr;
+        row-gap: 3rem; } }
+    .contact .container .contact-info .info h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #171717;
+      margin-bottom: 3.3rem; }
+    .contact .container .contact-info .info p:not(:last-child) {
+      margin-bottom: 2rem; }
+    .contact .container .contact-info .info p:first-of-type {
+      margin-bottom: 3rem; }
+    .contact .container .contact-info .info p span {
+      font-weight: 700;
+      color: #171717; }
+    .contact .container .contact-info .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 4.8rem 4.8rem 17rem;
+      grid-template-areas: "name email" "title title" "comment comment";
+      column-gap: 3rem;
+      row-gap: 3rem;
+      margin-bottom: 3rem; }
+      @media (max-width: 480px) {
+        .contact .container .contact-info .contact-form {
+          grid-template-columns: 1fr;
+          grid-template-rows: 4.8rem 4.8rem 4.8rem 17rem;
+          grid-template-areas: "name" "email" "title" "comment"; } }
+      .contact .container .contact-info .contact-form .form-group {
+        height: 4.8rem;
+        width: 100%;
+        position: relative; }
+        .contact .container .contact-info .contact-form .form-group input {
+          width: 100%;
+          height: 100%;
+          border: none; }
+        .contact .container .contact-info .contact-form .form-group label {
+          position: absolute;
+          top: 50%;
+          left: 2rem;
+          transform: translate(0, -50%);
+          font-size: 1.5rem; }
+      .contact .container .contact-info .contact-form .form-name {
+        grid-area: name; }
+      .contact .container .contact-info .contact-form .form-email {
+        grid-area: email; }
+      .contact .container .contact-info .contact-form .form-title {
+        grid-area: title; }
+      .contact .container .contact-info .contact-form .form-comment {
+        grid-area: comment; }
+      .contact .container .contact-info .contact-form textarea {
+        border: none;
+        padding: 2rem;
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #787878;
+        resize: none; }
+  .contact .container .map {
+    width: 100%;
+    height: 47rem;
+    margin-top: 10rem; }
+    .contact .container .map img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+
+.project-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #f5f5f5;
+  align-items: center; }
+  @media (max-width: 768px) {
+    .project-detail {
+      grid-template-columns: 1fr; } }
+  .project-detail .left-side {
+    padding: 0 10rem 0 9rem;
+    animation-name: moveToRight;
+    animation-duration: 1s; }
+    @media (max-width: 1024px) {
+      .project-detail .left-side {
+        padding: 0 10rem 0 6rem; } }
+    @media (max-width: 768px) {
+      .project-detail .left-side {
+        padding: 4rem 3rem 4rem 3rem; } }
+    @media (max-width: 480px) {
+      .project-detail .left-side {
+        padding: 4rem 2rem 4rem 2rem; } }
+    .project-detail .left-side h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: #171717;
+      margin-bottom: 3.3rem; }
+    .project-detail .left-side .project-summary {
+      margin-bottom: 6rem; }
+      .project-detail .left-side .project-summary:not(:last-child) {
+        margin-bottom: 3.3rem; }
+    .project-detail .left-side .project-info span {
+      color: #171717;
+      font-weight: 700; }
+    .project-detail .left-side .project-info:not(:last-child) {
+      margin-bottom: 2rem; }
+  .project-detail .photo-wrapper {
+    width: 100%;
+    height: 57rem;
+    animation-name: moveToLeft;
+    animation-duration: 1s; }
+    @media (max-width: 480px) {
+      .project-detail .photo-wrapper {
+        height: 40rem; } }
+    .project-detail .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+
+.control {
+  padding: 4.2rem 0; }
+  .control .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative; }
+    .control .container .previous {
+      text-decoration: none; }
+      .control .container .previous p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #171717;
+        margin-left: 1.4rem;
+        text-transform: uppercase;
+        display: inline-block; }
+    .control .container .photo-wrapper {
+      width: 1.6rem;
+      height: 1.6rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .control .container .photo-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    .control .container .next {
+      text-decoration: none; }
+      .control .container .next p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #171717;
+        margin-right: 1.4rem;
+        text-transform: uppercase;
+        display: inline-block; }
+
+.footer {
+  background-color: #141414;
+  padding: 10rem 0; }
+  .footer .container {
+    display: grid;
+    grid-template-columns: 4.7fr 3fr 1.12fr 1.88fr 1fr;
+    grid-template-areas: auto auto auto;
+    grid-template-areas: "intro contact link1 link2 social" "intro contact link1 link2 social" "intro contact link1 link2 social"; }
+    @media (max-width: 480px) {
+      .footer .container {
+        grid-template-areas: "intro intro intro intro intro" "contact contact contact contact contact" "link1 link2 . social ."; } }
+    .footer .container .company-intro {
+      grid-area: intro; }
+      @media (max-width: 480px) {
+        .footer .container .company-intro {
+          margin-bottom: 2rem; } }
+      .footer .container .company-intro .company-name {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 2.7rem; }
+    .footer .container .company-contact {
+      grid-area: contact; }
+      @media (max-width: 480px) {
+        .footer .container .company-contact {
+          margin-bottom: 2rem; } }
+    .footer .container .company-link-1 {
+      grid-area: link1; }
+    .footer .container .company-link-2 {
+      grid-area: link2; }
+    .footer .container .company-social {
+      grid-area: social; }
+    .footer .container p {
+      color: #bcbcbc; }
+      .footer .container p:not(:last-child) {
+        margin-bottom: .5rem; }
+    .footer .container a {
+      color: #bcbcbc;
+      text-decoration: none;
+      display: block; }
+      .footer .container a:not(:last-child) {
+        margin-bottom: .5rem; }
+      .footer .container a:hover {
+        color: #10c9c3; }

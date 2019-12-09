@@ -1,0 +1,16 @@
+{
+  "name": "piroll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "node-sass sass/style.scss -o css/",
+    "watch": "node-sass -w sass/style.scss -o css/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

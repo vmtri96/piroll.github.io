@@ -1,0 +1,13 @@
+.btn {
+    padding: 2.3rem 5.3rem;
+    text-decoration: none;
+    @include font($font-heading, 1.2rem, 600);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+}
+
+.btn-primary {
+    background-color: $color-primary;
+    color: white;
+}
